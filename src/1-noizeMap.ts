@@ -20,7 +20,7 @@ function renderNoize(
     const n = noize(noizeX, noizeY)
 
     ctx.fillStyle = `rgba(${n * 255}, 0, ${n * 255}, 1)`
-    // ctx.fillStyle = `rgba(${255 - n * 255}, ${n * 255}, ${255 - n * 255}, ${n})`
+    // ctx.fillStyle = `rgba(${255 - (n * 255)}, ${n * 255}, ${255 - (n * 255)}, ${n})`
     // ctx.fillStyle = '#'
     //   + (0xffffff - (n * 0xffffff)).toString(16).split('.')[0]!.padStart(6, '0')
     //   + (0xff - (n * 0xff)).toString(16).split('.')[0]!.padStart(2, '0')

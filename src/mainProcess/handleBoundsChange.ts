@@ -19,12 +19,5 @@ subscribeToElectronEvent(() => {
 
 export function subscribeToElectronEvent(subscribe: (() => () => void)) {
   const unsubscribe = subscribe()
-  const { DEV } = import.meta.env
-
-  function removeListener() {
-    unsubscribe()
-    DEV && window.removeEventListener('beforeunload', removeListener)
-  }
-
-  DEV && window.addEventListener('beforeunload', removeListener)
+  window.addEventListener('beforeunload', unsubscribe, { once: true })
 }
